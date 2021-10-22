@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RSShool2021Androidtask6MusicApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".viewmodels.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.RSShool2021Androidtask6MusicApp.NoActionBar">
