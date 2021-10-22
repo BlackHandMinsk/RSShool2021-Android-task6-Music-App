@@ -39,7 +39,6 @@ class MusicNotificationManager(private val context: Context,
         ).build().apply {
             setSmallIcon(R.drawable.ic_play)
             setMediaSessionToken(sessionToken)
-            TODO("change icon")
         }
     }
 
