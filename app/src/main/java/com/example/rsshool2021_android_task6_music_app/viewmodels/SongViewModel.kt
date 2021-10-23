@@ -40,6 +40,4 @@ class SongViewModel @Inject constructor(musicServiceConnection: MusicServiceConn
             }
         }
     }
-
-
 }
