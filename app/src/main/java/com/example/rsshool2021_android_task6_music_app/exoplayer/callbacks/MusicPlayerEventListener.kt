@@ -2,7 +2,8 @@ package com.example.rsshool2021_android_task6_music_app.exoplayer.callbacks
 
 import android.widget.Toast
 import com.example.rsshool2021_android_task6_music_app.exoplayer.MusicService
-import com.google.android.exoplayer2.PlaybackException
+import com.google.android.exoplayer2.ExoPlaybackException
+
 import com.google.android.exoplayer2.Player
 
 class MusicPlayerEventListener(
@@ -16,7 +17,7 @@ class MusicPlayerEventListener(
         }
     }
 
-    override fun onPlayerError(error: PlaybackException) {
+    override fun onPlayerError(error: ExoPlaybackException) {
         super.onPlayerError(error)
         Toast.makeText(musicService,"An unknown error occured",Toast.LENGTH_LONG).show()
     }

@@ -16,40 +16,39 @@ import com.example.rsshool2021_android_task6_music_app.other.Constants.NOTIFICAT
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
 
-class MusicNotificationManager(private val context: Context,
-                               sessionToken:MediaSessionCompat.Token,
-                               notificationListener: PlayerNotificationManager.NotificationListener,
-                                private val newSongCallbacks:()->Unit
-
+class MusicNotificationManager(
+    private val context: Context,
+    sessionToken: MediaSessionCompat.Token,
+    notificationListener: PlayerNotificationManager.NotificationListener,
+    private val newSongCallback: () -> Unit
 ) {
 
+    private val notificationManager: PlayerNotificationManager
 
-
-    private lateinit var  notificationManager: PlayerNotificationManager
-
-    init{
-        //createwithnotificationChannel
-
-        val mediaController = MediaControllerCompat(context,sessionToken)
-        notificationManager = PlayerNotificationManager.Builder(
+    init {
+        val mediaController = MediaControllerCompat(context, sessionToken)
+        notificationManager = PlayerNotificationManager.createWithNotificationChannel(
             context,
-            NOTIFICATION_ID,
             NOTIFICATION_CHANNEL_ID,
-            DescriptionAdapter(mediaController)
-        ).build().apply {
+            R.string.notification_channel_name,
+            R.string.notification_channel_description,
+            NOTIFICATION_ID,
+            DescriptionAdapter(mediaController),
+            notificationListener
+        ).apply {
             setSmallIcon(R.drawable.ic_play)
             setMediaSessionToken(sessionToken)
         }
     }
 
-
-    fun showNotification(player: Player){
+    fun showNotification(player: Player) {
         notificationManager.setPlayer(player)
     }
 
+    private inner class DescriptionAdapter(
+        private val mediaController: MediaControllerCompat
+    ) : PlayerNotificationManager.MediaDescriptionAdapter {
 
-
-    private inner class DescriptionAdapter(private val mediaController:MediaControllerCompat):PlayerNotificationManager.MediaDescriptionAdapter{
         override fun getCurrentContentTitle(player: Player): CharSequence {
             return mediaController.metadata.description.title.toString()
         }
@@ -66,8 +65,9 @@ class MusicNotificationManager(private val context: Context,
             player: Player,
             callback: PlayerNotificationManager.BitmapCallback
         ): Bitmap? {
-            Glide.with(context).asBitmap().load(mediaController.metadata.description.iconUri)
-                .into(object :CustomTarget<Bitmap>(){
+            Glide.with(context).asBitmap()
+                .load(mediaController.metadata.description.iconUri)
+                .into(object : CustomTarget<Bitmap>() {
                     override fun onResourceReady(
                         resource: Bitmap,
                         transition: Transition<in Bitmap>?
@@ -76,10 +76,8 @@ class MusicNotificationManager(private val context: Context,
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) = Unit
-
                 })
             return null
         }
-
     }
 }
