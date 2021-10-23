@@ -13,9 +13,7 @@ import com.example.rsshool2021_android_task6_music_app.data.entities.Song
 import kotlinx.android.synthetic.main.list_item.view.*
 import javax.inject.Inject
 
-class SongAdapter @Inject constructor(
-    private val glide:RequestManager
-):BaseSongAdapter(R.id.list_item) {
+class SwipeSongAdapter():BaseSongAdapter(R.id.list_item) {
 
 
     override val differ = AsyncListDiffer(this,diffCallback )
@@ -24,9 +22,8 @@ class SongAdapter @Inject constructor(
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
        val song = songs[position]
         holder.itemView.apply {
-            tvPrimary.text = song.tittle
-            tvSecondary.text = song.artist
-            glide.load(song.bitmapUri).into(ivItemImage)
+            val text = "${song.tittle} - ${song.artist}"
+            tvPrimary.text = text
 
             setOnClickListener {
                 onItemClickListener?.let { click->
