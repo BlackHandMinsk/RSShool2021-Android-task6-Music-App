@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RSShool2021Androidtask6MusicApp">
+        android:theme="@style/AppTheme">
         <service android:name=".exoplayer.MusicService">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService"/>
@@ -22,7 +22,7 @@
             android:name=".viewmodels.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.RSShool2021Androidtask6MusicApp.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

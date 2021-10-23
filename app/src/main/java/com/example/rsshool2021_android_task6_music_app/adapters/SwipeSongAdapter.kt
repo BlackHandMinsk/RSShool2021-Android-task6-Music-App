@@ -13,7 +13,7 @@ import com.example.rsshool2021_android_task6_music_app.data.entities.Song
 import kotlinx.android.synthetic.main.list_item.view.*
 import javax.inject.Inject
 
-class SwipeSongAdapter():BaseSongAdapter(R.id.list_item) {
+class SwipeSongAdapter:BaseSongAdapter(R.layout.swipe_item) {
 
 
     override val differ = AsyncListDiffer(this,diffCallback )
