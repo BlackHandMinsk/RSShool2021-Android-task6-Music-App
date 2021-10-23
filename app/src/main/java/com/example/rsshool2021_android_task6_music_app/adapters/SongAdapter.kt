@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 class SongAdapter @Inject constructor(
     private val glide:RequestManager
-):BaseSongAdapter(R.id.list_item) {
+):BaseSongAdapter(R.layout.list_item) {
 
 
     override val differ = AsyncListDiffer(this,diffCallback )
