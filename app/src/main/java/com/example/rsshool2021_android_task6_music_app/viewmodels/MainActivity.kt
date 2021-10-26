@@ -2,6 +2,7 @@ package com.example.rsshool2021_android_task6_music_app.viewmodels
 
 import android.os.Bundle
 import android.support.v4.media.session.PlaybackStateCompat
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -12,6 +13,7 @@ import com.bumptech.glide.RequestManager
 import com.example.rsshool2021_android_task6_music_app.R
 import com.example.rsshool2021_android_task6_music_app.adapters.SwipeSongAdapter
 import com.example.rsshool2021_android_task6_music_app.data.entities.Song
+import com.example.rsshool2021_android_task6_music_app.data.local.LocalDatabase
 import com.example.rsshool2021_android_task6_music_app.exoplayer.isPlaying
 import com.example.rsshool2021_android_task6_music_app.exoplayer.toSong
 import com.example.rsshool2021_android_task6_music_app.other.Status
@@ -34,7 +36,11 @@ class MainActivity : AppCompatActivity() {
 
     private var playbackState:PlaybackStateCompat?= null
 
-private var curPlayingSong: Song? = null
+    private var curPlayingSong: Song? = null
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -68,7 +68,6 @@ class MusicService:MediaBrowserServiceCompat() {
 
     override fun onCreate() {
         super.onCreate()
-
         serviceScope.launch {
             firebaseMusicSource.fetchMediaData()
         }
@@ -122,7 +121,6 @@ class MusicService:MediaBrowserServiceCompat() {
         playNow:Boolean
     ){
         val curSongIndex = if(curPlayingSong == null) 0 else songs.indexOf(itemToPlay)
-       // exoPlayer.setThrowsWhenUsingWrongThread(false)
         exoPlayer.prepare(firebaseMusicSource.asMediaSource(dataSourceFactory))
         exoPlayer.seekTo(curSongIndex,0L)
         exoPlayer.playWhenReady = playNow
