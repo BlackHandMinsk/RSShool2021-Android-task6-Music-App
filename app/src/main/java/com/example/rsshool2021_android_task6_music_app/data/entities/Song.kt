@@ -1,6 +1,6 @@
 package com.example.rsshool2021_android_task6_music_app.data.entities
 
-import com.google.gson.annotations.JsonAdapter
+
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

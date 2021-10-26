@@ -13,7 +13,7 @@ import com.example.rsshool2021_android_task6_music_app.exoplayer.callbacks.Music
 import com.example.rsshool2021_android_task6_music_app.exoplayer.callbacks.MusicPlayerNotificationListener
 import com.example.rsshool2021_android_task6_music_app.other.Constants.MEDIA_ROOT_ID
 import com.example.rsshool2021_android_task6_music_app.other.Constants.NETWORK_ERROR
-import com.google.android.exoplayer2.ExoPlayer
+
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
@@ -144,7 +144,7 @@ class MusicService:MediaBrowserServiceCompat() {
         clientPackageName: String,
         clientUid: Int,
         rootHints: Bundle?
-    ): BrowserRoot? {
+    ): BrowserRoot {
        return BrowserRoot(MEDIA_ROOT_ID,null)
     }
 

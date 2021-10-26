@@ -1,7 +1,7 @@
 package com.example.rsshool2021_android_task6_music_app.exoplayer
 
 import android.app.PendingIntent
-import android.content.ComponentCallbacks
+
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
@@ -58,7 +58,7 @@ class MusicNotificationManager(
             return mediaController.sessionActivity
         }
 
-        override fun getCurrentContentText(player: Player): CharSequence? {
+        override fun getCurrentContentText(player: Player): CharSequence {
             return mediaController.metadata.description.subtitle.toString()
         }
 

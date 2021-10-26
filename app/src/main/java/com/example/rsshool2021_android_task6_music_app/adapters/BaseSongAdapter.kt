@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rsshool2021_android_task6_music_app.R
+
 import com.example.rsshool2021_android_task6_music_app.data.entities.Song
-import kotlinx.android.synthetic.main.list_item.view.*
+
 
 abstract class BaseSongAdapter(
     private val layoutId:Int

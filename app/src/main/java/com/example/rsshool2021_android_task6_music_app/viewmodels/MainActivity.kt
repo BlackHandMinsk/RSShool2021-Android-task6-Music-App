@@ -2,18 +2,18 @@ package com.example.rsshool2021_android_task6_music_app.viewmodels
 
 import android.os.Bundle
 import android.support.v4.media.session.PlaybackStateCompat
-import android.util.Log
+
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.navigation.findNavController
+
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.RequestManager
 import com.example.rsshool2021_android_task6_music_app.R
 import com.example.rsshool2021_android_task6_music_app.adapters.SwipeSongAdapter
 import com.example.rsshool2021_android_task6_music_app.data.entities.Song
-import com.example.rsshool2021_android_task6_music_app.data.local.LocalDatabase
+
 import com.example.rsshool2021_android_task6_music_app.exoplayer.isPlaying
 import com.example.rsshool2021_android_task6_music_app.exoplayer.toSong
 import com.example.rsshool2021_android_task6_music_app.other.Status
@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.isConnected.observe(this){
             it?.getContentIfNotHandled()?.let { result->
                 when(result.status){
-                    Status.ERROR ->Snackbar.make(rootLayout,result.message?:"An unknown error occured",Snackbar.LENGTH_LONG).show()
+                    Status.ERROR ->Snackbar.make(rootLayout,result.message?:"An unknown error",Snackbar.LENGTH_LONG).show()
                     else->Unit
                 }
             }
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.networkError.observe(this){
             it?.getContentIfNotHandled()?.let { result->
                 when(result.status){
-                    Status.ERROR ->Snackbar.make(rootLayout,result.message?:"An unknown error occured",Snackbar.LENGTH_LONG).show()
+                    Status.ERROR ->Snackbar.make(rootLayout,result.message?:"An unknown error",Snackbar.LENGTH_LONG).show()
                     else->Unit
                 }
             }

@@ -1,16 +1,14 @@
 package com.example.rsshool2021_android_task6_music_app.data.local
 
 import android.content.Context
-import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
+
 import com.example.rsshool2021_android_task6_music_app.data.entities.Song
-import com.example.rsshool2021_android_task6_music_app.viewmodels.MainActivity
+
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
-import dagger.hilt.android.qualifiers.ApplicationContext
-import java.io.File
+
 import java.io.IOException
-import java.io.InputStream
+
 
 class LocalDatabase() {
 

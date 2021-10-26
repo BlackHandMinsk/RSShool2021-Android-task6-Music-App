@@ -1,7 +1,7 @@
 package com.example.rsshool2021_android_task6_music_app.ui
 
 import android.os.Bundle
-import android.util.Log
+
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
