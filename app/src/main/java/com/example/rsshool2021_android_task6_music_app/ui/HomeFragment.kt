@@ -46,7 +46,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun subscribeToObservers() {
         mainViewModel.mediaItems.observe(viewLifecycleOwner) { result ->
-            when(result.status) {
+            when (result.status) {
                 Status.SUCCESS -> {
                     allSongsProgressBar.isVisible = false
                     result.data?.let { songs ->

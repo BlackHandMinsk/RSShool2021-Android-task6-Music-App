@@ -13,7 +13,7 @@ import java.io.IOException
 class LocalDatabase() {
 
 
-  private  fun getJsonDataFromAsset(context: Context): String {
+    private fun getJsonDataFromAsset(context: Context): String {
         val jsonString: String
         try {
             jsonString = context.assets.open("playlist.json").bufferedReader().use { it.readText() }
@@ -25,10 +25,10 @@ class LocalDatabase() {
     }
 
     fun getSongsFromJSON(context: Context): List<Song> {
-            val moshi = Moshi.Builder().build()
-            val listType = Types.newParameterizedType(List::class.java, Song::class.java)
-            val jsonAdapter = moshi.adapter<List<Song>>(listType)
-            val result = jsonAdapter.fromJson(getJsonDataFromAsset(context))
-            return result!!
-}
+        val moshi = Moshi.Builder().build()
+        val listType = Types.newParameterizedType(List::class.java, Song::class.java)
+        val jsonAdapter = moshi.adapter<List<Song>>(listType)
+        val result = jsonAdapter.fromJson(getJsonDataFromAsset(context))
+        return result!!
     }
+}

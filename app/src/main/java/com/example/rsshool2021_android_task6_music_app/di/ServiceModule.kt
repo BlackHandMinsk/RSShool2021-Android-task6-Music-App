@@ -37,15 +37,14 @@ object ServiceModule {
         @ApplicationContext context: Context,
         audioAttributes: AudioAttributes
     ) = SimpleExoPlayer.Builder(context).build().apply {
-        setAudioAttributes(audioAttributes,true)
+        setAudioAttributes(audioAttributes, true)
         setHandleAudioBecomingNoisy(true)
     }
-
 
 
     @ServiceScoped
     @Provides
     fun providesDataSourceFactory(
         @ApplicationContext context: Context
-    ) = DefaultDataSourceFactory(context,Util.getUserAgent(context, "MusicApp"))
+    ) = DefaultDataSourceFactory(context, Util.getUserAgent(context, "MusicApp"))
 }

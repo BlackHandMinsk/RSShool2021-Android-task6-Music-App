@@ -14,25 +14,26 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SongViewModel @Inject constructor(musicServiceConnection: MusicServiceConnection):ViewModel() {
+class SongViewModel @Inject constructor(musicServiceConnection: MusicServiceConnection) :
+    ViewModel() {
 
     private val playbackState = musicServiceConnection.playbackState
 
     private val _curSongDuration = MutableLiveData<Long>()
-    val curSongDuration:LiveData<Long> = _curSongDuration
+    val curSongDuration: LiveData<Long> = _curSongDuration
 
     private val _curPlayerPosition = MutableLiveData<Long>()
-    val curPlayerPosition:LiveData<Long> = _curPlayerPosition
+    val curPlayerPosition: LiveData<Long> = _curPlayerPosition
 
     init {
         updateCurrentPlayerPosition()
     }
 
-    private fun updateCurrentPlayerPosition(){
+    private fun updateCurrentPlayerPosition() {
         viewModelScope.launch {
-            while(true){
+            while (true) {
                 val pos = playbackState.value?.currentPlaybackPosition
-                if (curPlayerPosition.value != pos){
+                if (curPlayerPosition.value != pos) {
                     _curPlayerPosition.postValue(pos!!)
                     _curSongDuration.postValue(MusicService.curSongDuration)
                 }

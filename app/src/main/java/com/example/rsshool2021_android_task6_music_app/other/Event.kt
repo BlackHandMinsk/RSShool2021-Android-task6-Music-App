@@ -1,16 +1,16 @@
 package com.example.rsshool2021_android_task6_music_app.other
 
-open class Event<out T>(private val data:T) {
+open class Event<out T>(private val data: T) {
 
 
     var hasBeenHandled = false
-                   private set
+        private set
 
 
-    fun getContentIfNotHandled():T?{
-        return if (hasBeenHandled){
+    fun getContentIfNotHandled(): T? {
+        return if (hasBeenHandled) {
             null
-        }else{
+        } else {
             hasBeenHandled = true
             data
         }

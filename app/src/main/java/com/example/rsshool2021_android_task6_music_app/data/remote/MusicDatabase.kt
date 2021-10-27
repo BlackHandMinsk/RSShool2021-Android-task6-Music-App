@@ -13,7 +13,7 @@ import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 
 
-class MusicDatabase(context: Context){
+class MusicDatabase(context: Context) {
 
 
     private val fireStore = FirebaseFirestore.getInstance()
@@ -21,15 +21,15 @@ class MusicDatabase(context: Context){
     private val fromJson = LocalDatabase().getSongsFromJSON(context)
 
 
-    suspend fun getAllSongs():List<Song>{
-        return try{
+    suspend fun getAllSongs(): List<Song> {
+        return try {
             //сделаю нормальное переключение когда будет время ))
-          if (fromJson.isNotEmpty()) {
-              fromJson
-          }else{
-              songCollection.get().await().toObjects(Song::class.java)
+            if (fromJson.isNotEmpty()) {
+                fromJson
+            } else {
+                songCollection.get().await().toObjects(Song::class.java)
             }
-        }catch (e:Exception){
+        } catch (e: Exception) {
             emptyList()
         }
     }
