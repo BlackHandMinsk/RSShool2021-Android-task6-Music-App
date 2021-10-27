@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RSShool2021-Android-task6-Music-App</string>
+    <string name="app_name">MusicPlayer</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -9,4 +9,24 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="notification_channel_name">nitification_channel</string>
+    <string name="notification_channel_description">notification_channel_desc</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tvSongName_def_text">SONG NAME</string>
+    <string name="tvCurTime_def_time">00:00</string>
+    <string name="tvSongDuration_def_duration">00:00</string>
+    <string name="tvSongName_def_value">SONG NAME</string>
+    <string name="tvCurTime_def_value">00:00</string>
+    <string name="tvSongDuration_def_value">00:00</string>
+    <string name="ivPlayPauseDetail_content_descr">PLAY PAUSE BUTTON</string>
+    <string name="ivSkipPrevious_content_description">SKIP PREVIOUS</string>
+    <string name="ivSkip_content_description">SKIP NEXT</string>
+    <string name="ivSongImage_content_description">SONG IMAGE</string>
+    <string name="tvPrimary_def_text">Playlist Title</string>
+    <string name="tvSecondary_def_text">100 Songs</string>
+    <string name="swipe_item_tvPrimary_defText">Title</string>
+    <string name="item_image_cont_descr">ITEM IMAGE</string>
+    <string name="song_image_content_descr">SONG IMAGE</string>
+    <string name="play_pause_content_descr">PLAY PAUSE</string>
 </resources>

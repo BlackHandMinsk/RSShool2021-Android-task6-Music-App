@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/songFragmentLayout"
+    android:background="@drawable/gradient_list"
+    tools:context=".viewmodels.MainActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvSongName"
+        android:layout_width="@dimen/tvSongName_width"
+        android:layout_height="wrap_content"
+        android:text="@string/tvSongName_def_text"
+        android:gravity="center"
+        android:textSize="@dimen/tvSongName_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/ivSongImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSongImage"
+        android:layout_width="@dimen/ivSongImage_width"
+        android:layout_height="@dimen/ivSongImage_height"
+        android:contentDescription="@string/ivSongImage_content_description"
+        android:background="@color/darkBackground"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvCurTime"
+        android:layout_width="@dimen/tvCurTIme_width"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tvCurTime_def_time"
+        android:layout_marginStart="@dimen/tvCurTime_marginStart"
+        android:textSize="@dimen/tvCurTime_textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="@dimen/seekBar_width"
+        android:layout_height="@dimen/seekBar_height"
+        app:layout_constraintEnd_toStartOf="@+id/tvSongDuration"
+        app:layout_constraintStart_toEndOf="@+id/tvCurTime"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvSongDuration"
+        android:layout_width="@dimen/tvSongDuration_width"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tvSongDuration_def_duration"
+        android:layout_marginEnd="@dimen/tvSongDuration_marginEnd"
+        android:textSize="@dimen/tvSongDuration_textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+    <ImageView
+        android:id="@+id/ivPlayPauseDetail"
+        android:layout_width="@dimen/ivPlayPauseDetail_width"
+        android:layout_height="@dimen/ivPlayPauseDetail_height"
+        android:contentDescription="@string/ivPlayPauseDetail_content_descr"
+        android:layout_marginTop="@dimen/ivPlayPauseDetail_marginTop"
+        android:background="@drawable/circle_drawable"
+        android:src="@drawable/ic_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <ImageView
+        android:id="@+id/ivSkipPrevious"
+        android:layout_width="@dimen/ivSkipPrevious_width"
+        android:layout_height="@dimen/ivSkipPrevious_height"
+        android:contentDescription="@string/ivSkipPrevious_content_description"
+        android:layout_marginEnd="@dimen/ivSkipPrevious_marginEnd"
+        android:src="@drawable/ic_skip_previous"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
+        app:layout_constraintEnd_toStartOf="@+id/ivPlayPauseDetail"
+        app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail" />
+
+    <ImageView
+        android:id="@+id/ivSkip"
+        android:layout_width="@dimen/ivSkip_width"
+        android:layout_height="@dimen/ivSkip_height"
+        android:contentDescription="@string/ivSkip_content_description"
+        android:layout_marginStart="@dimen/ivSkip_marginStart"
+        android:src="@drawable/ic_skip_next"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
+        app:layout_constraintStart_toEndOf="@+id/ivPlayPauseDetail"
+        app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
