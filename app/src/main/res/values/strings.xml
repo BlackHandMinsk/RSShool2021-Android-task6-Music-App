@@ -23,4 +23,10 @@
     <string name="ivSkipPrevious_content_description">SKIP PREVIOUS</string>
     <string name="ivSkip_content_description">SKIP NEXT</string>
     <string name="ivSongImage_content_description">SONG IMAGE</string>
+    <string name="tvPrimary_def_text">Playlist Title</string>
+    <string name="tvSecondary_def_text">100 Songs</string>
+    <string name="swipe_item_tvPrimary_defText">Title</string>
+    <string name="item_image_cont_descr">ITEM IMAGE</string>
+    <string name="song_image_content_descr">SONG IMAGE</string>
+    <string name="play_pause_content_descr">PLAY PAUSE</string>
 </resources>

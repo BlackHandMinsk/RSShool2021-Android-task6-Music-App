@@ -10,11 +10,11 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvSongName"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/tvSongName_width"
         android:layout_height="wrap_content"
         android:text="@string/tvSongName_def_text"
         android:gravity="center"
-        android:textSize="24sp"
+        android:textSize="@dimen/tvSongName_text_size"
         app:layout_constraintBottom_toTopOf="@+id/ivSongImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/ivSongImage"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/ivSongImage_width"
+        android:layout_height="@dimen/ivSongImage_height"
         android:contentDescription="@string/ivSongImage_content_description"
         android:background="@color/darkBackground"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -34,42 +34,42 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCurTime"
-        android:layout_width="50dp"
+        android:layout_width="@dimen/tvCurTIme_width"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/tvCurTime_def_time"
-        android:layout_marginStart="16dp"
-        android:textSize="14sp"
+        android:layout_marginStart="@dimen/tvCurTime_marginStart"
+        android:textSize="@dimen/tvCurTime_textSize"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/seekBar" />
 
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="0dp"
-        android:layout_height="18dp"
+        android:layout_width="@dimen/seekBar_width"
+        android:layout_height="@dimen/seekBar_height"
         app:layout_constraintEnd_toStartOf="@+id/tvSongDuration"
         app:layout_constraintStart_toEndOf="@+id/tvCurTime"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvSongDuration"
-        android:layout_width="50dp"
+        android:layout_width="@dimen/tvSongDuration_width"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/tvSongDuration_def_duration"
-        android:layout_marginEnd="16dp"
-        android:textSize="14sp"
+        android:layout_marginEnd="@dimen/tvSongDuration_marginEnd"
+        android:textSize="@dimen/tvSongDuration_textSize"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/seekBar" />
 
     <ImageView
         android:id="@+id/ivPlayPauseDetail"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="@dimen/ivPlayPauseDetail_width"
+        android:layout_height="@dimen/ivPlayPauseDetail_height"
         android:contentDescription="@string/ivPlayPauseDetail_content_descr"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/ivPlayPauseDetail_marginTop"
         android:background="@drawable/circle_drawable"
         android:src="@drawable/ic_play"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,10 +79,10 @@
 
     <ImageView
         android:id="@+id/ivSkipPrevious"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="@dimen/ivSkipPrevious_width"
+        android:layout_height="@dimen/ivSkipPrevious_height"
         android:contentDescription="@string/ivSkipPrevious_content_description"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/ivSkipPrevious_marginEnd"
         android:src="@drawable/ic_skip_previous"
         app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
         app:layout_constraintEnd_toStartOf="@+id/ivPlayPauseDetail"
@@ -90,10 +90,10 @@
 
     <ImageView
         android:id="@+id/ivSkip"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="@dimen/ivSkip_width"
+        android:layout_height="@dimen/ivSkip_height"
         android:contentDescription="@string/ivSkip_content_description"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/ivSkip_marginStart"
         android:src="@drawable/ic_skip_next"
         app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
         app:layout_constraintStart_toEndOf="@+id/ivPlayPauseDetail"

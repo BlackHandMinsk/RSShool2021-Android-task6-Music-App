@@ -2,6 +2,7 @@ package com.example.rsshool2021_android_task6_music_app.exoplayer
 
 import android.app.PendingIntent
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaDescriptionCompat
@@ -74,7 +75,11 @@ class MusicService:MediaBrowserServiceCompat() {
 
 
         val activityIntent = packageManager?.getLaunchIntentForPackage(packageName)?.let {
-            PendingIntent.getActivity(this,0,it,0)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                PendingIntent.getActivity(this,0,it,PendingIntent.FLAG_IMMUTABLE)
+            } else {
+                PendingIntent.getActivity(this,0,it,0)
+            }
         }
 
         mediaSession = MediaSessionCompat(this,SERVICE_TAG).apply {

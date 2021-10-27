@@ -23,6 +23,7 @@ class MusicDatabase(context: Context){
 
     suspend fun getAllSongs():List<Song>{
         return try{
+            //сделаю нормальное переключение когда будет время ))
           if (fromJson.isNotEmpty()) {
               fromJson
           }else{
