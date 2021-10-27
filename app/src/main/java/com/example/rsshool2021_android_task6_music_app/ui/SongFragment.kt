@@ -1,5 +1,6 @@
 package com.example.rsshool2021_android_task6_music_app.ui
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.support.v4.media.session.PlaybackStateCompat
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.rsshool2021_android_task6_music_app.data.entities.Song
 import com.example.rsshool2021_android_task6_music_app.exoplayer.isPlaying
 import com.example.rsshool2021_android_task6_music_app.exoplayer.toSong
 import com.example.rsshool2021_android_task6_music_app.other.Status
+import com.example.rsshool2021_android_task6_music_app.other.setBackGroundAnimation
 import com.example.rsshool2021_android_task6_music_app.viewmodels.MainViewModel
 import com.example.rsshool2021_android_task6_music_app.viewmodels.SongViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,6 +40,7 @@ class SongFragment : Fragment(R.layout.fragment_song) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setBackGroundAnimation(songFragmentLayout.background as AnimationDrawable)
         mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         subscribeToObservers()
 

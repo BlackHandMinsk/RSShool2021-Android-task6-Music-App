@@ -16,4 +16,11 @@
     <string name="tvSongName_def_text">SONG NAME</string>
     <string name="tvCurTime_def_time">00:00</string>
     <string name="tvSongDuration_def_duration">00:00</string>
+    <string name="tvSongName_def_value">SONG NAME</string>
+    <string name="tvCurTime_def_value">00:00</string>
+    <string name="tvSongDuration_def_value">00:00</string>
+    <string name="ivPlayPauseDetail_content_descr">PLAY PAUSE BUTTON</string>
+    <string name="ivSkipPrevious_content_description">SKIP PREVIOUS</string>
+    <string name="ivSkip_content_description">SKIP NEXT</string>
+    <string name="ivSongImage_content_description">SONG IMAGE</string>
 </resources>

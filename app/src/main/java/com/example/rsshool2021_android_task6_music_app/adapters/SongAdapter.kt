@@ -1,6 +1,9 @@
 package com.example.rsshool2021_android_task6_music_app.adapters
 
 
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.AsyncListDiffer
 
 import com.bumptech.glide.RequestManager
@@ -19,6 +22,7 @@ class SongAdapter @Inject constructor(
 
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
        val song = songs[position]
+        val animAlpha: Animation = AnimationUtils.loadAnimation(holder.itemView.context,R.anim.scale)
         holder.itemView.apply {
             tvPrimary.text = song.tittle
             tvSecondary.text = song.artist
@@ -26,6 +30,7 @@ class SongAdapter @Inject constructor(
 
             setOnClickListener {
                 onItemClickListener?.let { click->
+                    it.startAnimation(animAlpha)
                     click(song )
                 }
             }
